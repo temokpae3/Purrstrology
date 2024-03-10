@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purrstrology - Adoption Successful{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark" style="color: #fff;">
+        <div class="container">
+            <span class="navbar-brand">Purrstrology</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item {% if active_page == 'index' %}active{% endif %}">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item {% if active_page == 'cat_profiles' %}active{% endif %}">
+                        <a class="nav-link" href="{{ url_for('main.cat_profiles') }}">Cat Profiles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page content -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="container-fluid h-100" style="overflow-y: auto;">
+        <div class="row h-100">
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron text-center" style="background-color: transparent;">
+                    <h1 class="text-center" style="color: #fff;">You Adopted {{ kitty_name }}!</h1>
+                    <p class="lead" style="color: #fff;">Congratulations, {{ name }}! You've welcomed a new furry friend
+                        into your life.</p>
+                    <!-- Image based on user's input -->
+                    <div class="container d-flex justify-content-center">
+                        <!-- Image based on user's input -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img src="{{ image_path }}" alt="Adopted Kitty" class="img-thumbnail" style="color: #fff;">
+                        </div>
+                    </div>
+                    <h5><a href="{{ url_path }}" style="color: white;">Image Source: The Pulp Girls</a></h5>
+                    <a href="{{ url_for('main.download_image', image_path=image_path) }}" class="btn btn-outline-light">Download Your Adopted Kitty</a>
+                    <hr class="my-4">
+                    <p style="color: #fff;">Thank you for choosing Purrstrology.</p>
+                    <a class="btn btn-outline-light" href="{{ url_for('main.index') }}" role="button">Back to
+                        Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
