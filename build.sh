@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Change directory to the templates directory
+# Navigate to the base directory
 cd templates
 
-# Run the build command
+# Install dependencies if needed
+# Example:
+# npm install
+
+# Run your build command
 python run.py
