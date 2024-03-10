@@ -1,2 +1,2 @@
 [build]
-  command = "bash ./Purrstrology/build.sh"
+  command = "bash ./build.sh"
